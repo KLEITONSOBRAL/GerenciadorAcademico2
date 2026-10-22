@@ -1,0 +1,31 @@
+﻿@model List<GerenciadorAcademico2.Models.Projeto>
+
+@{
+    ViewData["Title"] = "Projetos";
+}
+
+<h1>Projetos acadêmicos</h1>
+
+<p>
+    <a asp-action="Cadastrar" class="btn btn-primary">Cadastrar projeto</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Carga horária</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var projeto in Model)
+        {
+            <tr>
+                <td>@projeto.Titulo</td>
+                <td>@projeto.Descricao</td>
+                <td>@projeto.CargaHoraria horas</td>
+            </tr>
+        }
+    </tbody>
+</table>
